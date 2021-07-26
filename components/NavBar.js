@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../public/av-comunica-logo.png";
+import Logo from "../public/avcomunica-logo-horizontal.png";
+import { BiMenuAltRight } from "react-icons/bi";
 
 export default function NavBar() {
   const menuItens = [
@@ -23,18 +24,23 @@ export default function NavBar() {
   ];
 
   return (
-    <nav className="flex flex-col md:flex-row md:px-5 items-center flex-wrap bg-white shadow py-5">
-      <Link href="/">
-        <a className="self-center mb-3 md:mb-0">
-          <Image className="" src={Logo} width={180} height={112} />
-        </a>
-      </Link>
-      <div className=" flex flex-row">
-        {menuItens.map((item) => (
-          <a className="mr-5 text-primary font-roboto text-base" href={item.link}>
-            {item.name}
-          </a>
-        ))}
+    <nav className="z-30 border-t-4 border-primary">
+      <div className="flex w-full h-20 justify-between bg-background items-center p-4 shadow-md">
+        <div className="h-9 md:ml-20">
+          <Link href="/">
+            <a>
+              <Image
+                src={Logo}
+                alt="Logo AV Comunicação Estratégica"
+                width={235}
+                height={35}
+              />
+            </a>
+          </Link>
+        </div>
+        <div>
+          <BiMenuAltRight className="h-8 w-8 text-primary md:hidden" />
+        </div>
       </div>
     </nav>
   );
