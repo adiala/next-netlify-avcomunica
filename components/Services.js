@@ -10,7 +10,7 @@ export default function Services() {
   };
 
   return (
-    <div className="bg-gray-200 min-h-screen mb-10 md:container mx-auto">
+    <div className="bg-gray-200 min-h-screen md:container mx-auto">
       <div className="p-4">
         <div className="mt-2 w-10 h-0.5 bg-primary mb-2"></div>
         <h1 className="leading-none font-rubik text-3xl text-black uppercase mb-6">
@@ -30,7 +30,7 @@ export default function Services() {
           <div className="p-4 pb-0 mt-4 ml-8">
             {service.name}
             {!!isOpen[index] && (
-              <div className="animate-fade-in-down">{service.description}</div>
+              <div className="animate-fade-in-down mb-2">{service.description}</div>
             )}
             {!isOpen[index] && <div></div>}
           </div>

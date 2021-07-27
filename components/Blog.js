@@ -4,14 +4,13 @@ import postPhoto from "../public/blog-01.jpeg";
 export default function Blog() {
   return (
     <div className="md:container mx-auto">
-        
       <div className="p-4">
         <div className="mt-2 w-10 h-0.5 bg-primary mb-2"></div>
         <h1 className="leading-none font-rubik text-3xl text-black uppercase">
           Blog
         </h1>
       </div>
-      <div className="p-5 w-full">
+      {/* <div className="p-5 w-full">
         <Image src={postPhoto} alt="Imagem da Adriana" />
       </div>
       <div className="flex flex-col mx-8 bg-white shadow-md mb-10">
@@ -24,7 +23,7 @@ export default function Blog() {
           <p className="leading-relaxed tracking-tight text-md font-roboto antialiased">
             Como coordenadora de Comunicação da Executiva Nacional do PSDB,
             entre 2012 e 2018, eu recebi a missão de organizar uma rede de
-            comunicação nacional para o partido.
+            comunicação nacional para o partido.</p>
             <p className="mt-2">
               {" "}
               Confesso que quando aceitei o convite, meu objetivo principal era
@@ -32,9 +31,8 @@ export default function Blog() {
               acompanhar 5 eleições presidenciais como repórter, eu queria
               conhecer a engrenagem da campanha por dentro.
             </p>
-          </p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
