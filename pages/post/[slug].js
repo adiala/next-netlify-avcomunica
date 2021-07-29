@@ -3,6 +3,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Date from "@components/Date";
+import NavBar from "@components/NavBar";
 
 function Post({ title, body, image, date }) {
   const [imageUrl, setImageUrl] = useState("");
@@ -19,13 +20,14 @@ function Post({ title, body, image, date }) {
   return (
     <div>
       <Head>
-        <title>{title} | Pinheiro de Azevedo Advocacia</title>
+        <title>{title} | Adriana Vasconcelos Comunicação Estratégica</title>
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet"
         ></link>
       </Head>
+      <NavBar />
       <main>
         <div className="container mx-auto px-5 md:px-16 mt-10">
           <article>

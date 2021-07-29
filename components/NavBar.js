@@ -25,7 +25,7 @@ export default function NavBar() {
 
   return (
     <nav className="z-30 border-t-4 border-primary">
-      <div className="flex w-full h-20 justify-between bg-background items-center p-4 shadow-md">
+      <div className="flex w-full h-20 justify-between bg-background items-center p-6 shadow-md">
         <div className="h-9 md:ml-20">
           <Link href="/">
             <a>

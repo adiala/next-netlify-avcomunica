@@ -13,11 +13,11 @@ export default function Hero() {
       <div className="flex">
         <div className="h-44 w-2 -my-10 ml-5 bg-primary z-40"></div>
         <div className="w-80 p-4">
-          <h1 className="leading-none tracking-tighter font-rubik text-3xl font-bold text-black uppercase antialiased">
+          <h1 className="leading-none tracking-tighter font-rubik text-3xl font-bold text-gray-900 uppercase antialiased">
             Para se comunicar bem,
             <br /> é preciso estratégia!
           </h1>
-          <h1 className="leading-none mt-4 tracking-tighter font-roboto text-2xl text-black antialiased">
+          <h1 className="leading-none mt-4 tracking-tighter font-rubik text-2xl text-gray-700 antialiased">
             Seja na política, no mundo empresarial ou na vida pessoal.
           </h1>
         </div>
