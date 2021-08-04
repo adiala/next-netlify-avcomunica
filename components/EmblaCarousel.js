@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { PrevButton, NextButton } from "./embla/EmblaButtons";
 import { useRecursiveTimeout } from "./embla/useRecursiveTimeout";
 import { useEmblaCarousel } from "embla-carousel/react";
 import Image from "next/image";
-import media1 from "../public/media-1.jpg";
-import media2 from "../public/media-2.jpg";
+import media1 from "../public/politica-01.jpg";
+import media2 from "../public/politica-02.png";
+import media3 from "../public/politica-03.png";
+import media4 from "../public/politica-04.jpg";
 
 const AUTOPLAY_INTERVAL = 4000;
 
@@ -54,25 +55,43 @@ const EmblaCarousel = () => {
   }, [play]);
 
   return (
-    <section className="flex justify-center p-4">
+    <section className="flex justify-center">
       <div className="embla">
         <div className="embla__viewport" ref={viewportRef}>
           <div className="embla__container">
-            <div className="embla__slide">
+            <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
                 <Image
-                  className="embla__slide__img"
+                  className=""
                   src={media1}
                   alt="A cool cat."
                   
                 />
               </div>
             </div>
-            <div className="embla__slide">
+            <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
                 <Image
-                  className="embla__slide__img"
+                  className=""
                   src={media2}
+                  alt="A cool cat."
+                />
+              </div>
+            </div>
+            <div className="embla__slide pr-2">
+              <div className="embla__slide__inner">
+                <Image
+                  className=""
+                  src={media3}
+                  alt="A cool cat."
+                />
+              </div>
+            </div>
+            <div className="embla__slide pr-2">
+              <div className="embla__slide__inner">
+                <Image
+                  className=""
+                  src={media4}
                   alt="A cool cat."
                 />
               </div>

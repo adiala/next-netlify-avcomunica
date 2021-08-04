@@ -1,9 +1,10 @@
 import ImageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import { useState, useEffect } from "react";
+import Footer from "@components/Footer";
 import Head from "next/head";
 import Date from "@components/Date";
-import NavBar from "@components/NavBar";
+import Navbar from "@components/Navbar";
 
 function Post({ title, body, image, date }) {
   const [imageUrl, setImageUrl] = useState("");
@@ -27,31 +28,33 @@ function Post({ title, body, image, date }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <NavBar />
+      <Navbar />
       <main>
-        <div className="container mx-auto px-5 md:px-16 mt-10">
+        <div className="container mx-auto px-4 mt-10">
           <article>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
-              {title}
-            </h2>
-            <div className="mb-8 md:mb-16 -mx-5 sm:mx-0">
-              <div className="-mx-5 sm:mx-0">
+          <div className="mb-2 md:mb-16">
+              <div className="">
                 {imageUrl && (
                   <img
-                    className="shadow-small max-w-full max-h-full"
+                    className="object-cover h-3/4 w-full shadow-small"
                     src={imageUrl}
                   />
                 )}
               </div>
             </div>
-            <div className="max-w-2xl mx-auto">
-              <div className="mb-6 text-lg">
-                <Date dateString={date} />
+            <h2 className="text-5xl font-roboto tracking-tight font-bold">
+              {title}
+            </h2>
+            <div className="mx-auto">
+              <div className="mb-6 text-base text-roboto text-gray-800">
+               <p>Postado em: <Date dateString={date} /></p>
               </div>
             </div>
+            
+            
 
-            <div className="max-w-2xl mx-auto">
-              <div className="leading-relaxed  text-gray-600">
+            <div className="max-w-4xl mx-auto mb-10">
+              <div className="leading-loose text-gray-900 text-xl">
               <BlockContent
                 blocks={body}
                 projectId="9xodeons"
@@ -62,6 +65,7 @@ function Post({ title, body, image, date }) {
           </article>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

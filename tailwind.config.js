@@ -10,6 +10,10 @@ module.exports = {
       'rubik': ['"Rubik"', 'sans-serif'],
      },
     extend: {
+      backgroundImage: theme => ({
+        'contact': "url('public/contact.jpg')",
+        'profile': "url('public/adriana-perfil.jpg')",
+       }),
       keyframes: {
         'fade-in-down': {
           '0%': {
@@ -27,13 +31,13 @@ module.exports = {
       },
       height: {
         '1/4': '25vh',
-        '1/2': '45vh',
+        '1/2': '55vh',
         '3/4': '75vh',
        },
       colors: {
-        background: "#fefaf2",
+        background: "#fee7d7ff",
         primary: '#f66c13',
-        secondary: '#942704',
+        secondary: '#6c2d04ff',
       },
     },
   },

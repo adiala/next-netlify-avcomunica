@@ -11,9 +11,9 @@ import { MdEventNote } from "react-icons/md";
 
 const styles = {
   sIcon: "h-full w-full text-white",
-  title: "font-rubik tracking-tighter text-xl text-black uppercase rounded-r-lg text-gray-900",
-  p1: "pr-2 mt-2 tracking-wide text-md font-roboto antialiased text-gray-700",
-  p2: "pr-2 mt-2 tracking-wide text-md font-roboto antialiased text-gray-700",
+  title: "font-rubik tracking-tighter md:text-2xl text-xl text-secondary uppercase",
+  p1: "font-roboto antialiased text-gray-900 leading-relaxed",
+  p2: "font-roboto antialiased text-gray-900 leading-relaxed",
 };
 
 const servicesData = [

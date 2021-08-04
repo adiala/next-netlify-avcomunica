@@ -1,5 +1,6 @@
 import { useState } from "react";
 import servicesData from "data/servicesData";
+import Contact from "@components/Contact";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
@@ -10,50 +11,31 @@ export default function Services() {
   };
 
   return (
-    <section className="bg-gray-200 py-2">
-      <div className="bg-gray-200 min-h-screen md:container mx-auto">
+    <section className="bg-background h-full p-4">
+      <div className="container mx-auto">
         <div className="p-4">
           <div className="mt-2 w-10 h-0.5 bg-primary mb-2"></div>
-          <h1 className="leading-none font-rubik text-3xl text-gray-900 uppercase mb-6">
+          <h1 className="leading-none font-rubik text-3xl md:text-4xl text-gray-900 uppercase mb-6">
             Serviços
           </h1>
         </div>
-
-        {servicesData.map((service, index) => (
-          <div
-            key={index}
-            onClick={(e) => toggle(index)}
-            className="relative mx-auto mb-8 bg-white shadow-md w-4/5 h-auto rounded"
-          >
-            <div className="absolute -my-4 -mx-4 flex items-center w-12 h-12 bg-primary p-2 shadow-md rounded">
-              {service.icon}
-            </div>
-            <div className="p-5 pb-0 mt-4 ml-8">
-              {service.name}
-              {!!isOpen[index] && (
-                <div className="animate-fade-in-down mb-2">
-                  {service.description}
+        <div className="grid md:grid-cols-2 gap-7 px-4 lg:px-0">
+          {servicesData.map((service, index) => (
+            <div>
+              <div className="grid grid-rows-1 grid-flow-col gap-4 mx-auto lg:w-9/12">
+                <div className="w-14 h-14 row-span-2 bg-primary rounded-full p-3">
+                  {service.icon}
                 </div>
-              )}
-              {!isOpen[index] && <div></div>}
-            </div>
-            <div
-              className={
-                isOpen[index]
-                  ? "flex justify-center inset-y-3/4 inset-x-0 h-5 bg-transparent"
-                  : "flex justify-center inset-y-3/4 inset-x-0 h-5 bg-transparent"
-              }
-            >
-              <div className="rounded-b-full flex justify-center bg-white h-8 w-8 shadow-md">
-                {!isOpen[index] ? (
-                  <IoIosArrowDown className="w-6 h-6 mt-2 text-black" />
-                ) : (
-                  <IoIosArrowUp className="w-6 h-6 mt-2 text-black" />
-                )}
+                <div className="">
+                  {service.name}
+                  <div className="tracking-tight">
+                    {service.description}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

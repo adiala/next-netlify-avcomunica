@@ -1,18 +1,18 @@
 import Head from "next/head";
-import NavBar from "@components/NavBar";
+import Navbar from "@components/Navbar";
 import Hero from "@components/Hero";
 import Profile from "@components/Profile";
 import Services from "@components/Services";
 import Contact from "@components/Contact";
-import EmblaCarousel from "@components/EmblaCarousel";
+import Portfolio from "@components/Portfolio";
 import Blog from "@components/Blog";
+import Footer from "@components/Footer";
 import { useState, useEffect } from "react";
 import Date from "@components/Date";
 import ImageUrlBuilder from "@sanity/image-url";
 import { useRouter } from "next/router";
 
 export default function Home({ posts }) {
-
   // Inicio da função de Posts
 
   const router = useRouter();
@@ -55,14 +55,14 @@ export default function Home({ posts }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <NavBar />
+      <Navbar />
       <main>
         <Hero />
         <Blog />
-        <section className="mb-3">
+        <section className="mb-3 md:container md:mx-auto md:grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2">
           {mappedPosts.length ? (
             mappedPosts.map((p, index) => (
-              <div className="flex flex-col relative border-2 mx-4 mb-3">
+              <div className="flex flex-col relative border-2 mx-4 mb-3 transform transition-all hover:scale-105 cursor-pointer">
                 <div>
                   <a
                     aria-label={p.title}
@@ -94,7 +94,7 @@ export default function Home({ posts }) {
                     </p>
                     <hr className=""></hr>
                   </div>
-                  <p className="mt-2 text-gray-800 tracking-wide text-md font-roboto antialiased">
+                  <p className="mt-2 text-gray-800 tracking-tight text-md font-roboto antialiased">
                     {p.excerpt}
                   </p>
                 </div>
@@ -103,16 +103,19 @@ export default function Home({ posts }) {
           ) : (
             <>Sem posts no momento</>
           )}
-          <div className="flex flex-row-reverse px-4">
-            <p className=" p-1 text-primary text-md font-roboto antialiased">
-              Postagens anteriores »
+        </section>
+        <div className="flex justify-center mb-4 p-4 md:container mx-auto">
+          <div className="bg-primary w-32 h-10 hover:bg-secondary transition-all">
+            <p className="p-2 text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
+              Leia Mais »
             </p>
           </div>
-        </section>
+        </div>
         <Services />
         <Contact />
-        <EmblaCarousel />
+        <Portfolio />
         <Profile />
+        <Footer />
       </main>
     </>
   );
@@ -120,7 +123,7 @@ export default function Home({ posts }) {
 
 export const getServerSideProps = async (pageContext) => {
   const query = encodeURIComponent(
-    '*[_type == "post"] | order(_publishedAt desc)'
+    '*[_type == "post"][0..3] | order(_publishedAt desc)'
   );
   const url = `https://9xodeons.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());

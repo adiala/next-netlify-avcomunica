@@ -1,6 +1,6 @@
 .embla {
   position: relative;
-  background-color: red;
+  background-color: white;
 }
 
 .embla__viewport {
@@ -20,6 +20,7 @@
 .embla__container {
   display: flex;
   user-select: none;
+  align-items: center;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
   -webkit-tap-highlight-color: transparent;
@@ -33,14 +34,5 @@
 .embla__slide__inner {
   position: relative;
   overflow: hidden;
-  height: 190px;
-}
-
-.embla__slide__img {
-  position: absolute;
-  display: block;
-  width: auto;
-  height: fit-content;
-  width: fit-content;
 }
 
