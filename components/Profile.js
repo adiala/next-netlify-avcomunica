@@ -3,11 +3,11 @@ import profilePic from "../public/adriana-perfil.jpg";
 
 export default function Profile() {
   return (
-    <section className="container mx-auto px-4 lg:grid lg:grid-flow-col lg:grid-cols-3 lg:gap-6 mb-10">
-      <div className="lg:col-span-2">
-        <Image src={profilePic} />
+    <section className="lg:flex lg:flex-row lg:container mx-auto lg:p-4 lg:space-x-8 lg:justify-between">
+      <div className="w-full lg:flex-auto">
+        <Image src={profilePic} alt="Foto da Adriana Vasconcelos" />
       </div>
-      <div className="mt-2">
+      <div className="w-full container mx-auto lg:flex-auto lg:my-auto p-4 lg:p-0">
         <div className="w-10 h-0.5 bg-primary mb-2"></div>
         <h1 className="leading-none font-rubik text-3xl lg:text-4xl text-gray-900 uppercase mb-2">
           Perfil

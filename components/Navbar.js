@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
-import Logo from "../public/avcomunica-logo-horizontal.png";
+import Logo2 from "@components/Logo";
 import { BiMenuAltRight } from "react-icons/bi";
 
 export default function Navbar() {
@@ -14,7 +13,7 @@ export default function Navbar() {
   const menuItens = [
     {
       name: "Blog",
-      link: "/",
+      link: "/blog",
     },
     {
       name: "Serviços",
@@ -34,13 +33,8 @@ export default function Navbar() {
     <div className="border-t-4 border-primary shadow-md">
       <nav className="flex flex-wrap lg:flex-nowrap items-center p-2 z-30 container mx-auto border-b">
         <Link href="/">
-          <a className="inline-flex items-center p-2 mr-4">
-            <Image
-              src={Logo}
-              alt="Logo AV Comunicação Estratégica"
-              width={235}
-              height={35}
-            />
+          <a className="inline-flex h-full w-64 lg:w-80 items-center p-2 mr-4">
+            <Logo2 />
           </a>
         </Link>
 
@@ -59,9 +53,11 @@ export default function Navbar() {
         >
           <div className="lg:inline-flex lg:ml-auto lg:justify-between items-start flex flex-col lg:flex-row">
             {menuItens.map((i) => (
+              <Link href={i.link}>
               <a className="lg:w-auto w-full px-2 py-2 items-right justify-center uppercase tracking-tighter text-rubik antialiased text-gray-700 lg:hover:text-primary lg:cursor-pointer">
                 {i.name}
               </a>
+              </Link>
             ))}
           </div>
         </div>

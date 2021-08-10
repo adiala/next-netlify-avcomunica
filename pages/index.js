@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import Date from "@components/Date";
 import ImageUrlBuilder from "@sanity/image-url";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Home({ posts }) {
   // Inicio da função de Posts
@@ -106,9 +107,10 @@ export default function Home({ posts }) {
         </section>
         <div className="flex justify-center mb-4 p-4 md:container mx-auto">
           <div className="bg-primary w-32 h-10 hover:bg-secondary transition-all">
-            <p className="p-2 text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
+            <Link href="/blog"><p className="p-2 text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
               Leia Mais »
             </p>
+            </Link>
           </div>
         </div>
         <Services />
