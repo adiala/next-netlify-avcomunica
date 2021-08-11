@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
-import Logo2 from "@components/Logo";
 import { BiMenuAltRight } from "react-icons/bi";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [active, setActive] = useState(false);
 
   const handleClick = () => {
@@ -29,12 +28,13 @@ export default function Navbar() {
     },
   ];
 
+
   return (
     <div className="border-t-4 border-primary shadow-md">
       <nav className="flex flex-wrap lg:flex-nowrap items-center p-2 z-30 container mx-auto border-b">
         <Link href="/">
           <a className="inline-flex h-full w-64 lg:w-80 items-center p-2 mr-4">
-            <Logo2 />
+            {props.logo}
           </a>
         </Link>
 

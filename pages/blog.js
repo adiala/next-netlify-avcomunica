@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import { useState, useEffect } from "react";
+import Logo from "@components/Logo2";
 import Date from "@components/Date";
 import ImageUrlBuilder from "@sanity/image-url";
 import { useRouter } from "next/router";
@@ -32,7 +33,8 @@ export default function BlogPage({ posts }) {
     }
   }, [posts]);
 
-  const latestPosts = mappedPosts.slice(1);
+  const firstPost = mappedPosts.slice(0, 1);
+  const otherPost = mappedPosts.slice(1);
   // Fim da função de Posts
 
   return (
@@ -51,72 +53,68 @@ export default function BlogPage({ posts }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar />
+      <Navbar logo={<Logo/>} />
       <main>
-        <section className="md:container mx-auto">
-          <div className="p-4">
-            <div className="mt-2 w-10 h-0.5 bg-primary mb-2"></div>
-            <h1 className="leading-none font-rubik text-3xl text-gray-900 uppercase md:text-4xl">
-              Blog
-            </h1>
-          </div>
-          <div className="mb-3 md:container md:mx-auto md:grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2">
-            {latestPosts.length ? (
-              latestPosts.map((p, index) => (
-                <div className="flex flex-col relative border-2 mx-4 mb-3 transform transition-all hover:scale-105 cursor-pointer">
-                  <div>
-                    <a
-                      aria-label={p.title}
-                      onClick={() => router.push(`/post/${p.slug.current}`)}
-                      key={index}
-                    >
-                      <img src={p.mainImage} />
-                    </a>
-                  </div>
-                  <div className="p-5">
-                    <div className="flex relative">
-                      <div className="absolute w-2 p-0 m-0 bg-primary rounded-sm min-h-full"></div>
-                      <div className="ml-4">
-                        <h2 className="font-roboto text-xl tracking-tighter text-gray-900 font-bold">
-                          <a
-                            onClick={() =>
-                              router.push(`/post/${p.slug.current}`)
-                            }
-                            key={index}
-                            className="cursor-pointer"
-                          >
-                            {p.title}
-                          </a>
-                        </h2>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="mt-2 mb-2 tracking-tighter text-sm text-gray-700 font-roboto antialiased">
-                        Publicado em <Date dateString={p.publishedAt} />
-                      </p>
-                      <hr className=""></hr>
-                    </div>
-                    <p className="mt-2 text-gray-800 tracking-tight text-md font-roboto antialiased">
+        <section className="container mx-auto mb-8 lg:mt-10">
+          {firstPost.length ? (
+            firstPost.map((p, index) => (
+              <div className="lg:flex lg:flex-row lg:flex-nowrap lg:justify-between">
+                <div className="lg:w-full lg:h-full">
+                  <img src={p.mainImage} className="w-full h-full" />
+                </div>
+                <div className="mt-4 px-4 flex mx-auto space-x-4">
+                  <div className="min-h-full w-2 bg-primary lg:hidden"></div>
+                  <div className="lg:flex-grow-0 lg:w-full">
+                    <h1 className="font-rubik text-lg text-gray-700 uppercase leading-tight tracking-tighter lg:text-3xl lg:leading-normal hover:underline cursor-pointer">
+                      {p.title}
+                    </h1>
+                    <p className="font-rubik text-sm text-gray-500 tracking-tighter mb-2">
+                      Publicado em: <Date dateString={p.publishedAt} />
+                    </p>
+                    <p className="font-rubik text-base text-gray-700 tracking-tighter leading-tight lg:text-lg">
                       {p.excerpt}
                     </p>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <>Sem posts no momento</>
+          )}
+        </section>
+        <section className="container mx-auto px-2 mt-2 lg:flex lg:flex-row lg:px-0">
+            {otherPost.length ? (
+              otherPost.map((p, index) => (
+                <div className="flex flex-row space-x-4 mb-4 lg:flex-col lg:w-full lg:flex-wrap lg:mr-4 lg:space-x-0">
+                  <div className="flex-none w-44 lg:w-full lg:mb-4">
+                    <img src={p.mainImage} className="" />
+                  </div>
+                  <div className="flex my-auto lg:flex-col lg:m-0">
+                    <div>
+                      <h1 className="font-rubik text-sm text-gray-700 uppercase leading-tight tracking-tighter mb-2 lg:text-base">
+                        {p.title}
+                      </h1>
+                      <p className="font-rubik text-xs text-gray-500 tracking-tighter lg:text-sm">
+                        Publicado em: <Date dateString={p.publishedAt} />
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))
             ) : (
               <>Sem posts no momento</>
             )}
-          </div>
         </section>
-        <Footer />
       </main>
+
+      <Footer />
     </>
   );
 }
 
 export const getServerSideProps = async () => {
   const query = encodeURIComponent(
-    '*[_type == "post"] | order(_publishedAt desc)'
+    '*[_type == "post"] | order(publishedAt desc)'
   );
   const url = `https://9xodeons.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navbar from "@components/Navbar";
+import Logo from "@components/Logo";
 import Hero from "@components/Hero";
 import Profile from "@components/Profile";
 import Services from "@components/Services";
@@ -56,7 +57,7 @@ export default function Home({ posts }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar />
+      <Navbar logo={<Logo/>} />
       <main>
         <Hero />
         <Blog />
@@ -125,7 +126,7 @@ export default function Home({ posts }) {
 
 export const getServerSideProps = async (pageContext) => {
   const query = encodeURIComponent(
-    '*[_type == "post"][0..3] | order(_publishedAt desc)'
+    '*[_type == "post"][0..3] | order(publishedAt desc)'
   );
   const url = `https://9xodeons.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());

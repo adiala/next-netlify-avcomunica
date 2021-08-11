@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-gray-200 border-b-4 border-primary">
 
       <div className="flex flex-col mx-auto justify-between justify-items-center space-y-4 pt-8 px-4 mt-8">
-        <div className="w-80 mx-auto">
+        <div className="w-60 mx-auto">
           <Logo />
         </div>
         <hr className="border-t-2 border-gray-300 w-full lg:w-1/2 mx-auto" />
