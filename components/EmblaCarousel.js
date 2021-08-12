@@ -62,9 +62,9 @@ const EmblaCarousel = () => {
             <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
                 <Image
-                  className=""
                   src={media1}
                   alt="Campanha Simone Tebet."
+                  placeholder="blur"
                   
                 />
               </div>
@@ -72,7 +72,6 @@ const EmblaCarousel = () => {
             <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
                 <Image
-                  className=""
                   src={media2}
                   alt="PSDB Mulher"
                 />
@@ -81,7 +80,6 @@ const EmblaCarousel = () => {
             <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
                 <Image
-                  className=""
                   src={media3}
                   alt="Campanha Geraldo Alckmin"
                 />
@@ -90,7 +88,6 @@ const EmblaCarousel = () => {
             <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
                 <Image
-                  className=""
                   src={media4}
                   alt="Campanha Aécio Neves"
                 />

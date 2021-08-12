@@ -78,7 +78,7 @@ export default function Home({ posts }) {
                   <div className="flex relative">
                     <div className="absolute w-2 p-0 m-0 bg-primary rounded-sm min-h-full"></div>
                     <div className="ml-4">
-                      <h2 className="font-roboto text-xl tracking-tighter text-gray-900 font-bold">
+                      <h2 className="font-roboto text-lg tracking-tighter text-gray-900 font-bold uppercase leading-tight">
                         <a
                           onClick={() => router.push(`/post/${p.slug.current}`)}
                           key={index}

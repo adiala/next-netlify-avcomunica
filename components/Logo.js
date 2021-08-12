@@ -1,4 +1,4 @@
-export default function Logo() {
+export default function Logo(props) {
   return (
     <>
       <svg
@@ -8,6 +8,8 @@ export default function Logo() {
         data-name="Layer 2"
         version="1.1"
         viewBox="0 0 1002 172"
+        width="240"
+        height="42"
       >
         <title>Logo Av Comunicação</title>
         <defs id="defs14">

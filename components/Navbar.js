@@ -34,6 +34,7 @@ export default function Navbar(props) {
       <nav className="flex flex-wrap lg:flex-nowrap items-center p-2 z-30 container mx-auto border-b">
         <Link href="/">
           <a className="inline-flex h-full w-64 lg:w-80 items-center p-2 mr-4">
+
             {props.logo}
           </a>
         </Link>

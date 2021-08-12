@@ -19,10 +19,19 @@ import cont05 from "../public/cont-05.png";
 export default function Profile() {
   const partidos = [part01, part02, part03, part04, part05, part06];
   const corporativo = [corp01, corp02, corp03, corp04];
-  const conteudo = [cont01, cont02, cont03, cont04, cont05];
+  const conteudo = [
+    { name: cont01, link: "/cartilha-programatica.pdf" },
+    { name: cont02, link: "/" },
+    { name: cont03, link: "/" },
+    { name: cont04, link: "/" },
+    { name: cont05, link: "/" },
+  ];
 
   return (
-    <div id="clientes" className="mt-3 flex flex-col items-center justify-center mb-5 md:container mx-auto">
+    <div
+      id="clientes"
+      className="mt-3 flex flex-col items-center justify-center mb-5 md:container mx-auto"
+    >
       <div className="p-4">
         <div className="mt-1 w-10 h-0.5 bg-primary mb-2"></div>
         <h1 className="leading-none font-rubik text-3xl lg:text-4xl text-gray-900 uppercase mb-2">
@@ -42,7 +51,7 @@ export default function Profile() {
             <div className="grid grid-cols-2 lg:grid-cols-2">
               {partidos.map((p) => (
                 <div>
-                  <Image src={p} layout="responsive" />
+                  <Image placeholder="blur" src={p} layout="responsive" />
                 </div>
               ))}
             </div>
@@ -55,19 +64,28 @@ export default function Profile() {
             <div className="grid grid-cols-2 lg:grid-cols-2">
               {corporativo.map((c) => (
                 <div>
-                  <Image src={c} layout="responsive" />
+                  <Image placeholder="blur" src={c} layout="responsive" />
                 </div>
               ))}
             </div>
           </div>
           <div className="pl-2 lg:col-span-3">
-            <h2 className="mb-3 tracking-tight leading-none font-rubik text-xl text-gray-800 uppercase">
+            <h2 className="mb-2 tracking-tight leading-none font-rubik text-xl text-gray-800 uppercase">
               Produção de Conteúdo
             </h2>
+            <p className="mb-3 leading-none font-rubik text-sm text-gray-900 uppercase">
+              Clique para baixar os conteúdos
+            </p>
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
               {conteudo.map((c) => (
                 <div className="transform transition-all hover:scale-105 cursor-pointer">
-                  <Image src={c} layout="responsive" />
+                  <a href={c.link} target="_blank">
+                    <Image
+                      placeholder="blur"
+                      src={c.name}
+                      layout="responsive"
+                    />
+                  </a>
                 </div>
               ))}
             </div>
