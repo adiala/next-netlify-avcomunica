@@ -65,13 +65,13 @@ export default function BlogPage({ posts }) {
                 <div className="mt-4 px-4 flex mx-auto space-x-4">
                   <div className="min-h-full w-2 bg-primary lg:hidden"></div>
                   <div className="lg:flex-grow-0 lg:w-full">
-                    <h1 className="font-rubik text-lg text-gray-700 uppercase leading-tight tracking-tighter lg:text-3xl lg:leading-normal hover:underline cursor-pointer">
+                    <h1 className="font-rubik text-lg text-gray-900 uppercase leading-tight tracking-tighter lg:text-3xl lg:leading-normal hover:underline cursor-pointer">
                       {p.title}
                     </h1>
-                    <p className="font-rubik text-sm text-gray-500 tracking-tighter mb-2">
+                    <p className="font-rubik text-sm text-gray-600 tracking-tighter mb-2">
                       Publicado em: <Date dateString={p.publishedAt} />
                     </p>
-                    <p className="font-rubik text-base text-gray-700 tracking-tighter leading-tight lg:text-lg">
+                    <p className="font-rubik text-base text-gray-800 tracking-tighter leading-tight lg:text-lg">
                       {p.excerpt}
                     </p>
                   </div>
@@ -91,10 +91,10 @@ export default function BlogPage({ posts }) {
                 </div>
                 <div className="flex my-auto lg:flex-col lg:m-0">
                   <div>
-                    <h1 className="font-rubik text-sm text-gray-700 uppercase leading-tight tracking-tighter mb-2 lg:text-base">
+                    <h1 className="font-rubik text-sm text-gray-900 uppercase leading-tight tracking-tighter mb-2 lg:text-base">
                       {p.title}
                     </h1>
-                    <p className="font-rubik text-xs text-gray-500 tracking-tighter lg:text-sm">
+                    <p className="font-rubik text-xs text-gray-600 tracking-tighter lg:text-sm">
                       Publicado em: <Date dateString={p.publishedAt} />
                     </p>
                   </div>

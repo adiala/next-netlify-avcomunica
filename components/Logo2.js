@@ -6,6 +6,8 @@ export default function Logo2() {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         data-name="Layer 2"
         viewBox="0 0 1002 172"
+        width="240"
+        height="41"
       >
         <path
           fill="url(#linearGradient79601)"

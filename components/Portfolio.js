@@ -21,10 +21,10 @@ export default function Profile() {
   const corporativo = [corp01, corp02, corp03, corp04];
   const conteudo = [
     { name: cont01, link: "/cartilha-programatica.pdf" },
-    { name: cont02, link: "/" },
-    { name: cont03, link: "/" },
-    { name: cont04, link: "/" },
-    { name: cont05, link: "/" },
+    { name: cont02, link: "/cartilha-de-identidade-do-cidadania.pdf" },
+    { name: cont03, link: "/Cartilha-da-candidata.pdf" },
+    { name: cont04, link: "/20-anos-de-historias-e-conquistas.pdf" },
+    { name: cont05, link: "/guia-eleitoral-do-cidadania-digital.pdf" },
   ];
 
   return (
