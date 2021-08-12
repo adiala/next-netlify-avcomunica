@@ -16,15 +16,15 @@ export default function Navbar(props) {
     },
     {
       name: "Serviços",
-      link: "#servicos",
+      link: props.urlServicos,
     },
     {
       name: "Clientes e Portfolio",
-      link: "#clientes",
+      link: props.urlClientes,
     },
     {
       name: "Perfil",
-      link: "#perfil",
+      link: props.urlPerfil,
     },
   ];
 

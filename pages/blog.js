@@ -53,7 +53,12 @@ export default function BlogPage({ posts }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar logo={<Logo />} />
+      <Navbar
+        logo={<Logo />}
+        urlServicos="./#servicos"
+        urlClientes="./#clientes"
+        urlPerfil="./#perfil"
+      />
       <main>
         <section className="container mx-auto mb-8 lg:mt-10">
           {firstPost.length ? (
@@ -65,9 +70,15 @@ export default function BlogPage({ posts }) {
                 <div className="mt-4 px-4 flex mx-auto space-x-4">
                   <div className="min-h-full w-2 bg-primary lg:hidden"></div>
                   <div className="lg:flex-grow-0 lg:w-full">
-                    <h1 className="font-rubik text-lg text-gray-900 uppercase leading-tight tracking-tighter lg:text-3xl lg:leading-normal hover:underline cursor-pointer">
-                      {p.title}
-                    </h1>
+                    <a
+                      onClick={() => router.push(`/post/${p.slug.current}`)}
+                      key={index}
+                      className="cursor-pointer"
+                    >
+                      <h1 className="font-rubik text-lg text-gray-900 uppercase leading-tight tracking-tighter lg:text-3xl lg:leading-normal hover:underline cursor-pointer">
+                        {p.title}
+                      </h1>
+                    </a>
                     <p className="font-rubik text-sm text-gray-600 tracking-tighter mb-2">
                       Publicado em: <Date dateString={p.publishedAt} />
                     </p>
@@ -87,13 +98,25 @@ export default function BlogPage({ posts }) {
             otherPost.map((p, index) => (
               <div className="flex flex-row space-x-4 mb-4 lg:flex-col lg:w-full lg:flex-wrap lg:mr-4 lg:space-x-0">
                 <div className="flex-none w-44 lg:w-full lg:mb-4">
-                  <img src={p.mainImage} className="" />
+                <a
+                      onClick={() => router.push(`/post/${p.slug.current}`)}
+                      key={index}
+                      className="cursor-pointer"
+                    >
+                  <img src={p.mainImage} alt={p.title} />
+                  </a>
                 </div>
                 <div className="flex my-auto lg:flex-col lg:m-0">
                   <div>
-                    <h1 className="font-rubik text-sm text-gray-900 uppercase leading-tight tracking-tighter mb-2 lg:text-base">
-                      {p.title}
-                    </h1>
+                    <a
+                      onClick={() => router.push(`/post/${p.slug.current}`)}
+                      key={index}
+                      className="cursor-pointer"
+                    >
+                      <h1 className="font-rubik text-sm text-gray-900 uppercase leading-tight tracking-tighter mb-2 lg:text-base hover:underline">
+                        {p.title}
+                      </h1>
+                    </a>
                     <p className="font-rubik text-xs text-gray-600 tracking-tighter lg:text-sm">
                       Publicado em: <Date dateString={p.publishedAt} />
                     </p>

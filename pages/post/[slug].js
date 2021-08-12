@@ -29,7 +29,7 @@ function Post({ title, body, image, date }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar logo={<Logo />} />
+      <Navbar logo={<Logo />} urlServicos="./#servicos" urlClientes="./#clientes" urlPerfil="./#perfil"/>
       <main>
         <div className="container mx-auto px-4 mt-10">
           <article>

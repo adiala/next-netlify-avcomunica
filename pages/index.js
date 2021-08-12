@@ -57,7 +57,7 @@ export default function Home({ posts }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar logo={<Logo />} />
+      <Navbar logo={<Logo />} urlServicos="#servicos" urlClientes="#clientes" urlPerfil="#perfil" />
       <main>
         <Hero />
         <Blog />
