@@ -4,33 +4,43 @@ import Logo from "@components/Logo";
 export default function Footer(props) {
   return (
     <footer className="bg-gray-200 border-b-4 border-primary">
-
       <div className="flex flex-col mx-auto justify-between justify-items-center space-y-4 pt-8 px-4 mt-8">
         <div className="w-60 mx-auto">
           <Logo />
         </div>
         <hr className="border-t-2 border-gray-300 w-full lg:w-1/2 mx-auto" />
         <div className="mx-auto flex flex-col lg:flex-row lg:space-x-4 space-y-2 lg:space-y-0 font-rubik text-base text-gray-800 uppercase">
-
-          <a href={"/blog"} className="mx-auto hover:text-primary cursor-pointer">
+          <a
+            href={"/blog"}
+            className="mx-auto hover:text-primary cursor-pointer"
+          >
             Blog
           </a>
-          <a href={props.urlServicos} className="mx-auto hover:text-primary cursor-pointer">
+          <a
+            href={props.urlServicos}
+            className="mx-auto hover:text-primary cursor-pointer"
+          >
             Serviços
           </a>
-          <a href={props.urlClientes} className="mx-auto  hover:text-primary cursor-pointer">
+          <a
+            href={props.urlClientes}
+            className="mx-auto  hover:text-primary cursor-pointer"
+          >
             Clientes e Portfolio
           </a>
-          <a href={props.urlPerfil} className="mx-auto hover:text-primary cursor-pointer">
+          <a
+            href={props.urlPerfil}
+            className="mx-auto hover:text-primary cursor-pointer"
+          >
             Perfil
           </a>
-
         </div>
         <div className="flex flex-row space-x-4 lg:space-x-8 mx-auto">
           {/* Início do Botão Linkedin */}
           <a
             href="https://www.linkedin.com/company/av-comunica"
             target="_blank"
+            rel="noreferrer"
           >
             <button className="text-gray-600 hover:text-primary">
               <svg
@@ -51,6 +61,7 @@ export default function Footer(props) {
           <a
             href="https://www.facebook.com/assessoriaavcomunicacao"
             target="_blank"
+            rel="noreferrer"
           >
             <button className="text-gray-600 hover:text-primary">
               <svg
@@ -72,7 +83,11 @@ export default function Footer(props) {
           </a>
           {/* Fim do Botão Facebook */}
           {/* Início do Botão Instagram */}
-          <a href="https://www.instagram.com/av_comunicacao/" target="_blank">
+          <a
+            href="https://www.instagram.com/av_comunicacao/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <button className="text-gray-600 hover:text-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +104,11 @@ export default function Footer(props) {
           </a>
           {/* Fim do Botão Instagram */}
           {/* Início do Botão Twitter */}
-          <a href="https://twitter.com/av_comunicacao" target="_blank">
+          <a
+            href="https://twitter.com/av_comunicacao"
+            target="_blank"
+            rel="noreferrer"
+          >
             <button className="text-gray-600 hover:text-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -45,6 +45,10 @@ export default function Home({ posts }) {
     <>
       <Head>
         <title>Adriana Vasconcelos Comunicação Estratégica | Home</title>
+        <meta
+          name="description"
+          content="Adriana Vasconcelos Comunicação Estratégica - Para se Comunicar bem, é preciso estratégia"
+        ></meta>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,7 +61,12 @@ export default function Home({ posts }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar logo={<Logo />} urlServicos="#servicos" urlClientes="#clientes" urlPerfil="#perfil" />
+      <Navbar
+        logo={<Logo />}
+        urlServicos="#servicos"
+        urlClientes="#clientes"
+        urlPerfil="#perfil"
+      />
       <main>
         <Hero />
         <Blog />
@@ -71,7 +80,7 @@ export default function Home({ posts }) {
                     onClick={() => router.push(`/post/${p.slug.current}`)}
                     key={index}
                   >
-                    <img src={p.mainImage} />
+                    <img src={p.mainImage} alt={p.title} />
                   </a>
                 </div>
                 <div className="p-5">
@@ -109,7 +118,7 @@ export default function Home({ posts }) {
         <div className="flex justify-center mb-4 p-4 md:container mx-auto">
           <div className="bg-primary w-32 h-10 hover:bg-secondary transition-all">
             <Link href="/blog">
-              <p className="p-2 text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
+              <p className="p-2 text-gray-900 text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
                 Leia Mais »
               </p>
             </Link>

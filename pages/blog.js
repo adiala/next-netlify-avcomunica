@@ -41,6 +41,10 @@ export default function BlogPage({ posts }) {
     <>
       <Head>
         <title>Adriana Vasconcelos Comunicação Estratégica | Blog</title>
+        <meta
+          name="description"
+          content="Adriana Vasconcelos Comunicação Estratégica - Para se Comunicar bem, é preciso estratégia"
+        ></meta>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
