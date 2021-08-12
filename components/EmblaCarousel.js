@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useRecursiveTimeout } from "./embla/useRecursiveTimeout";
 import { useEmblaCarousel } from "embla-carousel/react";
 import Image from "next/image";
-import media1 from "../public/politica-01.jpg";
+import media1 from "../public/politica-01.png";
 import media2 from "../public/politica-02.png";
 import media3 from "../public/politica-03.png";
 import media4 from "../public/politica-04.jpg";
@@ -64,7 +64,7 @@ const EmblaCarousel = () => {
                 <Image
                   className=""
                   src={media1}
-                  alt="A cool cat."
+                  alt="Campanha Simone Tebet."
                   
                 />
               </div>
@@ -74,7 +74,7 @@ const EmblaCarousel = () => {
                 <Image
                   className=""
                   src={media2}
-                  alt="A cool cat."
+                  alt="PSDB Mulher"
                 />
               </div>
             </div>
@@ -83,7 +83,7 @@ const EmblaCarousel = () => {
                 <Image
                   className=""
                   src={media3}
-                  alt="A cool cat."
+                  alt="Campanha Geraldo Alckmin"
                 />
               </div>
             </div>
@@ -92,7 +92,7 @@ const EmblaCarousel = () => {
                 <Image
                   className=""
                   src={media4}
-                  alt="A cool cat."
+                  alt="Campanha Aécio Neves"
                 />
               </div>
             </div>

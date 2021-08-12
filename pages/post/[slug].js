@@ -1,5 +1,6 @@
 import ImageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import Logo from "@components/Logo2.js";
 import { useState, useEffect } from "react";
 import Footer from "@components/Footer";
 import Head from "next/head";
@@ -28,7 +29,7 @@ function Post({ title, body, image, date }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar />
+      <Navbar logo={<Logo/>} />
       <main>
         <div className="container mx-auto px-4 mt-10">
           <article>
