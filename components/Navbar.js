@@ -16,15 +16,15 @@ export default function Navbar(props) {
     },
     {
       name: "Serviços",
-      link: "/",
+      link: "#servicos",
     },
     {
       name: "Clientes e Portfolio",
-      link: "/",
+      link: "#clientes",
     },
     {
       name: "Perfil",
-      link: "/",
+      link: "#perfil",
     },
   ];
 

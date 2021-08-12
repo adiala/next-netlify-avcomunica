@@ -53,7 +53,7 @@ export default function BlogPage({ posts }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar logo={<Logo/>} />
+      <Navbar logo={<Logo />} />
       <main>
         <section className="container mx-auto mb-8 lg:mt-10">
           {firstPost.length ? (
@@ -83,31 +83,35 @@ export default function BlogPage({ posts }) {
           )}
         </section>
         <section className="container mx-auto px-2 mt-2 lg:flex lg:flex-row lg:px-0">
-            {otherPost.length ? (
-              otherPost.map((p, index) => (
-                <div className="flex flex-row space-x-4 mb-4 lg:flex-col lg:w-full lg:flex-wrap lg:mr-4 lg:space-x-0">
-                  <div className="flex-none w-44 lg:w-full lg:mb-4">
-                    <img src={p.mainImage} className="" />
-                  </div>
-                  <div className="flex my-auto lg:flex-col lg:m-0">
-                    <div>
-                      <h1 className="font-rubik text-sm text-gray-700 uppercase leading-tight tracking-tighter mb-2 lg:text-base">
-                        {p.title}
-                      </h1>
-                      <p className="font-rubik text-xs text-gray-500 tracking-tighter lg:text-sm">
-                        Publicado em: <Date dateString={p.publishedAt} />
-                      </p>
-                    </div>
+          {otherPost.length ? (
+            otherPost.map((p, index) => (
+              <div className="flex flex-row space-x-4 mb-4 lg:flex-col lg:w-full lg:flex-wrap lg:mr-4 lg:space-x-0">
+                <div className="flex-none w-44 lg:w-full lg:mb-4">
+                  <img src={p.mainImage} className="" />
+                </div>
+                <div className="flex my-auto lg:flex-col lg:m-0">
+                  <div>
+                    <h1 className="font-rubik text-sm text-gray-700 uppercase leading-tight tracking-tighter mb-2 lg:text-base">
+                      {p.title}
+                    </h1>
+                    <p className="font-rubik text-xs text-gray-500 tracking-tighter lg:text-sm">
+                      Publicado em: <Date dateString={p.publishedAt} />
+                    </p>
                   </div>
                 </div>
-              ))
-            ) : (
-              <>Sem posts no momento</>
-            )}
+              </div>
+            ))
+          ) : (
+            <>Sem posts no momento</>
+          )}
         </section>
       </main>
 
-      <Footer />
+      <Footer
+        urlServicos="../#servicos"
+        urlClientes="../#clientes"
+        urlPerfil="../#perfil"
+      />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "@components/Logo";
 
-export default function Footer() {
+export default function Footer(props) {
   return (
     <footer className="bg-gray-200 border-b-4 border-primary">
 
@@ -12,16 +12,16 @@ export default function Footer() {
         <hr className="border-t-2 border-gray-300 w-full lg:w-1/2 mx-auto" />
         <div className="mx-auto flex flex-col lg:flex-row lg:space-x-4 space-y-2 lg:space-y-0 font-rubik text-base text-gray-800 uppercase">
 
-          <a className="mx-auto hover:text-primary cursor-pointer">
+          <a href={"/blog"} className="mx-auto hover:text-primary cursor-pointer">
             Blog
           </a>
-          <a className="mx-auto hover:text-primary cursor-pointer">
+          <a href={props.urlServicos} className="mx-auto hover:text-primary cursor-pointer">
             Serviços
           </a>
-          <a className="mx-auto  hover:text-primary cursor-pointer">
+          <a href={props.urlClientes} className="mx-auto  hover:text-primary cursor-pointer">
             Clientes e Portfolio
           </a>
-          <a className="mx-auto hover:text-primary cursor-pointer">
+          <a href={props.urlPerfil} className="mx-auto hover:text-primary cursor-pointer">
             Perfil
           </a>
 

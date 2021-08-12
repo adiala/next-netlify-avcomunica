@@ -3,7 +3,7 @@ import profilePic from "../public/adriana-perfil.jpg";
 
 export default function Profile() {
   return (
-    <section className="lg:flex lg:flex-row lg:container mx-auto lg:p-4 lg:space-x-8 lg:justify-between">
+    <section id="perfil" className="lg:flex lg:flex-row lg:container mx-auto lg:p-4 lg:space-x-8 lg:justify-between">
       <div className="w-full lg:flex-auto">
         <Image src={profilePic} alt="Foto da Adriana Vasconcelos" />
       </div>

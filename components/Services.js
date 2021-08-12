@@ -11,7 +11,7 @@ export default function Services() {
   };
 
   return (
-    <section className="bg-background h-full p-4">
+    <section id="servicos" className="bg-background h-full p-4">
       <div className="container mx-auto">
         <div className="p-4">
           <div className="mt-2 w-10 h-0.5 bg-primary mb-2"></div>

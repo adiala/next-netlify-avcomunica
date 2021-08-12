@@ -57,7 +57,7 @@ export default function Home({ posts }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar logo={<Logo/>} />
+      <Navbar logo={<Logo />} />
       <main>
         <Hero />
         <Blog />
@@ -108,9 +108,10 @@ export default function Home({ posts }) {
         </section>
         <div className="flex justify-center mb-4 p-4 md:container mx-auto">
           <div className="bg-primary w-32 h-10 hover:bg-secondary transition-all">
-            <Link href="/blog"><p className="p-2 text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
-              Leia Mais »
-            </p>
+            <Link href="/blog">
+              <p className="p-2 text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
+                Leia Mais »
+              </p>
             </Link>
           </div>
         </div>
@@ -118,7 +119,11 @@ export default function Home({ posts }) {
         <Contact />
         <Portfolio />
         <Profile />
-        <Footer />
+        <Footer
+          urlServicos="#servicos"
+          urlClientes="#clientes"
+          urlPerfil="#perfil"
+        />
       </main>
     </>
   );

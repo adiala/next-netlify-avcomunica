@@ -29,11 +29,11 @@ function Post({ title, body, image, date }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Navbar logo={<Logo/>} />
+      <Navbar logo={<Logo />} />
       <main>
         <div className="container mx-auto px-4 mt-10">
           <article>
-          <div className="mb-2 md:mb-16">
+            <div className="mb-2 md:mb-16">
               <div className="">
                 {imageUrl && (
                   <img
@@ -48,25 +48,29 @@ function Post({ title, body, image, date }) {
             </h2>
             <div className="mx-auto">
               <div className="mb-6 text-base text-roboto text-gray-800">
-               <p>Postado em: <Date dateString={date} /></p>
+                <p>
+                  Postado em: <Date dateString={date} />
+                </p>
               </div>
             </div>
-            
-            
 
             <div className="max-w-4xl mx-auto mb-10">
               <div className="leading-loose text-gray-900 text-xl">
-              <BlockContent
-                blocks={body}
-                projectId="9xodeons"
-                dataset="production"
-              />
+                <BlockContent
+                  blocks={body}
+                  projectId="9xodeons"
+                  dataset="production"
+                />
               </div>
             </div>
           </article>
         </div>
       </main>
-      <Footer />
+      <Footer
+        urlServicos="../#servicos"
+        urlClientes="../#clientes"
+        urlPerfil="../#perfil"
+      />
     </div>
   );
 }

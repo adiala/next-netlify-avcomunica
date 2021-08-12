@@ -22,7 +22,7 @@ export default function Profile() {
   const conteudo = [cont01, cont02, cont03, cont04, cont05];
 
   return (
-    <div className="mt-3 flex flex-col items-center justify-center mb-5 md:container mx-auto">
+    <div id="clientes" className="mt-3 flex flex-col items-center justify-center mb-5 md:container mx-auto">
       <div className="p-4">
         <div className="mt-1 w-10 h-0.5 bg-primary mb-2"></div>
         <h1 className="leading-none font-rubik text-3xl lg:text-4xl text-gray-900 uppercase mb-2">
