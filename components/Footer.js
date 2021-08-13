@@ -38,7 +38,7 @@ export default function Footer(props) {
         <div className="flex flex-row space-x-4 lg:space-x-8 mx-auto">
           {/* Início do Botão Linkedin */}
           <a
-            href="https://www.linkedin.com/company/av-comunica"
+            href="https://www.linkedin.com/company/av-comunica%C3%A7%C3%A3o-multim%C3%ADdia"
             target="_blank"
             rel="noreferrer"
           >
