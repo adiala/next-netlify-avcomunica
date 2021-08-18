@@ -8,8 +8,8 @@ export default function Logo(props) {
         data-name="Layer 2"
         version="1.1"
         viewBox="0 0 1002 172"
-        width="240"
-        height="42"
+        width="300"
+        height="52"
       >
         <title>Logo Av Comunicação</title>
         <defs id="defs14">

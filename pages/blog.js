@@ -2,7 +2,7 @@ import Head from "next/head";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import { useState, useEffect } from "react";
-import Logo from "@components/Logo2";
+import Logo from "@components/Logo";
 import Date from "@components/Date";
 import ImageUrlBuilder from "@sanity/image-url";
 import { useRouter } from "next/router";

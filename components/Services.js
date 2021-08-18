@@ -1,8 +1,5 @@
 import { useState } from "react";
 import servicesData from "data/servicesData";
-import Contact from "@components/Contact";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowUp } from "react-icons/io";
 
 export default function Services() {
   const [isOpen, setIsOpen] = useState({});

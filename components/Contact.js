@@ -4,9 +4,17 @@ export default function Contact() {
       <section className="container mx-auto lg:grid lg:grid-cols-2 gap-7 py-8">
         <div className="">
           <div className="mt-2 w-10 h-0.5 bg-primary mb-2 ml-4"></div>
-          <h1 className="leading-none font-rubik text-3xl lg:text-4xl text-gray-900 uppercase mb-8 px-4">
+          <h1 className="leading-none font-rubik text-3xl lg:text-4xl text-gray-900 uppercase px-4 mb-2">
             Contato
           </h1>
+          <p className="px-4 mb-2 font-rubik font-medium antialiased text-gray-900 leading-relaxed tracking-tighter text-lg">
+            Identificou algum serviço que esteja precisando?
+          </p>
+          <p className="pl-4 lg:pr-24 mb-4 lg:mb-8 font-roboto antialiased text-gray-900 leading-relaxed tracking-tight text-base">
+            Estamos à disposição para ajudá-lo ou esclarecer qualquer dúvida!
+            Basta entrar em contato conosco, que retornaremos o mais rápido
+            possível.
+          </p>
           <div className="flex flex-wrap justify-center">
             <div className="w-full lg:w-full">
               <div className="relative flex flex-col min-w-0 h-full w-full mb-6 px-2 rounded-lg">

@@ -31,7 +31,7 @@ module.exports = {
       },
       height: {
         '1/4': '25vh',
-        '1/2': '55vh',
+        '1/2': '40vh',
         '3/4': '75vh',
        },
       colors: {
