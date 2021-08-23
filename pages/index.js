@@ -99,7 +99,7 @@ export default function Home({ posts }) {
                     <p className="mt-2 mb-2 tracking-tighter text-sm text-gray-700 font-roboto antialiased">
                       Publicado em <Date dateString={p.publishedAt} />
                     </p>
-                    <hr className=""></hr>
+                    <hr></hr>
                   </div>
                   <p className="mt-2 text-gray-800 tracking-tight text-md font-roboto antialiased">
                     {p.excerpt}
@@ -112,13 +112,11 @@ export default function Home({ posts }) {
           )}
         </section>
         <div className="flex justify-center mb-4 p-4 md:container mx-auto">
-          <div className="bg-primary w-32 h-10 hover:bg-secondary transition-all">
             <Link href="/blog">
-              <p className="p-2 text-gray-900 text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
+              <button className="bg-primary w-full lg:w-32 h-10 p-2 hover:bg-secondary transition-all text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
                 Leia Mais »
-              </p>
+              </button>
             </Link>
-          </div>
         </div>
         <Services />
         <Contact />

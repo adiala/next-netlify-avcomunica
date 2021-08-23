@@ -76,7 +76,7 @@ export default function Contact() {
                     </div>
                     <div className="text-center mt-6">
                       <button
-                        className=" w-full text-rubik bg-primary text-gray-900 active:bg-gray-700 text-base font-bold uppercase px-6 py-3 shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                        className="bg-primary w-full h-10 p-2 hover:bg-secondary transition-all text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer"
                         type="submit"
                         style={{ transition: "all .15s ease" }}
                       >
