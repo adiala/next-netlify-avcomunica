@@ -132,9 +132,9 @@ export default function Home({ posts }) {
   );
 }
 
-export const getServerSideProps = async (pageContext) => {
+export const getServerSideProps = async () => {
   const query = encodeURIComponent(
-    '*[_type == "post"][0..3] | order(publishedAt desc)'
+    '*[_type == "post"] | order(publishedAt desc)[0..3]'
   );
   const url = `https://9xodeons.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());
