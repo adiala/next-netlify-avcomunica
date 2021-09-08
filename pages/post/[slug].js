@@ -20,26 +20,11 @@ import {
 } from "react-share";
 
 function Post({ title, author, body, image, date, excerpt, slug }) {
-  const BlockRenderer = (props) => {
-    const { style = "normal" } = props.node;
 
-    if (/^h\d/.test(style)) {
-      const level = style.replace(/[^\d]/g, "");
-      return React.createElement(
-        style,
-        { className: `heading-${level}` },
-        props.children
-      );
-    }
-
-    if (style === "blockquote") {
-      return <blockquote>- {props.children}</blockquote>;
-    }
-
-    // Fall back to default handling
-    return BlockContent.defaultSerializers.types.block(props);
-  };
-
+  const imgStyle= {
+    maxHeight: "600px",
+  }
+  
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -73,7 +58,7 @@ function Post({ title, author, body, image, date, excerpt, slug }) {
           <div className="flex flex-col mt-4 lg:mt-0 lg:flex-row lg:items-center">
             <div className="w-full max-h-full lg:py-24">
               {imageUrl && (
-                <img className="object-cover object-center max-h-96 w-full" src={imageUrl} />
+                <img className="object-cover object-center w-full" src={imageUrl} style={imgStyle}/>
               )}
             </div>
             <div className="flex flex-col lg:pl-24 lg:pr-5 flex-grow-0 lg:w-9/12 mt-4 lg:mb-0 mb-4">
