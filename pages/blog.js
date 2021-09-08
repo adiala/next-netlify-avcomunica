@@ -97,7 +97,7 @@ export default function BlogPage({ posts }) {
             <>Sem posts no momento</>
           )}
         </section>
-        <section className="container mx-auto px-2 mt-2 lg:flex lg:flex-row lg:px-0 lg:flex-wrap">
+        <section className="container mx-auto px-2 mt-2 lg:flex lg:flex-row lg:px-0 lg:flex-wrap lg:justify-center">
           {otherPost.length ? (
             otherPost.map((p, index) => (
               <div className="flex flex-row space-x-4 mb-4 lg:flex-col lg:mr-4 lg:space-x-0 lg:w-72">
