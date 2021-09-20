@@ -44,11 +44,47 @@ export default function Home({ posts }) {
   return (
     <>
       <Head>
-        <title>Adriana Vasconcelos Comunicação Estratégica | Home</title>
+        {/* <!-- Primary Meta Tags --> */}
+        <title>Adriana Vasconcelos Comunicação Estratégica</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="title"
+          content="Adriana Vasconcelos Comunicação Estratégica"
+        />
         <meta
           name="description"
-          content="Adriana Vasconcelos Comunicação Estratégica - Para se Comunicar bem, é preciso estratégia"
-        ></meta>
+          content="Jornalista com ampla experiência nos 2 lados da notícia. Atuou 24 anos nas redações do Correio Braziliense, Gazeta Mercantil e O Globo."
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://adrianavasconcelos.com.br/" />
+        <meta
+          property="og:title"
+          content="Adriana Vasconcelos Comunicação Estratégica"
+        />
+        <meta
+          property="og:description"
+          content="Jornalista com ampla experiência nos 2 lados da notícia. Atuou 24 anos nas redações do Correio Braziliense, Gazeta Mercantil e O Globo."
+        />
+        <meta property="og:image" content="" />
+
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://adrianavasconcelos.com.br/"
+        />
+        <meta
+          property="twitter:title"
+          content="Adriana Vasconcelos Comunicação Estratégica"
+        />
+        <meta
+          property="twitter:description"
+          content="Jornalista com ampla experiência nos 2 lados da notícia. Atuou 24 anos nas redações do Correio Braziliense, Gazeta Mercantil e O Globo."
+        />
+        <meta property="twitter:image" content="" />
+
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -112,11 +148,11 @@ export default function Home({ posts }) {
           )}
         </section>
         <div className="flex justify-center mb-4 p-4 md:container mx-auto">
-            <Link href="/blog">
-              <button className="bg-primary w-full lg:w-32 h-10 p-2 hover:bg-secondary transition-all text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
-                Leia Mais »
-              </button>
-            </Link>
+          <Link href="/blog">
+            <button className="bg-primary w-full lg:w-32 h-10 p-2 hover:bg-secondary transition-all text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
+              Leia Mais »
+            </button>
+          </Link>
         </div>
         <Services />
         <Contact />
