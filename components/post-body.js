@@ -7,8 +7,6 @@ export default function PostBody({ content }) {
       <BlockContent
         blocks={content}
         className={markdownStyles.markdown}
-        projectId="9xodeons"
-        dataset="production"
       />
     </div>
   );

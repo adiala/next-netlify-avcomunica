@@ -8,38 +8,14 @@ import Contact from "@components/Contact";
 import Portfolio from "@components/Portfolio";
 import Blog from "@components/Blog";
 import Footer from "@components/Footer";
-import { useState, useEffect } from "react";
 import Date from "@components/Date";
-import ImageUrlBuilder from "@sanity/image-url";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { sanityClient } from "sanity";
+import router from "next/router";
+import Image from "@components/Image";
 
-export default function Home({ posts }) {
-  // Inicio da função de Posts
-
-  const router = useRouter();
-  const [mappedPosts, setMappedPosts] = useState([]);
-
-  useEffect(() => {
-    if (posts && posts.length) {
-      const builder = ImageUrlBuilder({
-        projectId: "9xodeons",
-        dataset: "production",
-      });
-
-      setMappedPosts(
-        posts.map((p) => {
-          return {
-            ...p,
-            mainImage: builder.image(p.mainImage).width(500).height(250),
-          };
-        })
-      );
-    } else {
-      setMappedPosts([]);
-    }
-  }, [posts]);
-  // Fim da função de Posts
+const Home = ({ posts }) => {
+  console.log(posts)
 
   return (
     <>
@@ -103,16 +79,16 @@ export default function Home({ posts }) {
         <Hero />
         <Blog />
         <section className="mb-3 md:container md:mx-auto md:grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2">
-          {mappedPosts.length ? (
-            mappedPosts.map((p, index) => (
+          {posts.length ? (
+            posts.map((p, index) => (
               <div className="flex flex-col relative border-2 mx-4 mb-3 transform transition-all hover:scale-105 cursor-pointer">
-                <div>
+                <div className="object-cover h-52 overflow-hidden">
                   <a
                     aria-label={p.title}
                     onClick={() => router.push(`/post/${p.slug.current}`)}
                     key={index}
                   >
-                    <img src={p.mainImage} alt={p.title} />
+                    <Image image={p.mainImage} alt={p.title} />
                   </a>
                 </div>
                 <div className="p-5">
@@ -166,16 +142,13 @@ export default function Home({ posts }) {
       </main>
     </>
   );
-}
+};
 
 export const getServerSideProps = async () => {
-  const query = encodeURIComponent(
-    '*[_type == "post"] | order(publishedAt desc)[0..3]'
-  );
-  const url = `https://9xodeons.api.sanity.io/v1/data/query/production?query=${query}`;
-  const result = await fetch(url).then((res) => res.json());
+  const query = `*[_type == "post"] | order(publishedAt desc)[0..3]`;
+  const posts = await sanityClient.fetch(query);
 
-  if (!result.result || !result.result.length) {
+  if (!posts.length) {
     return {
       props: {
         posts: [],
@@ -184,8 +157,10 @@ export const getServerSideProps = async () => {
   } else {
     return {
       props: {
-        posts: result.result,
+        posts,
       },
     };
   }
 };
+
+export default Home;

@@ -1,41 +1,15 @@
 import Head from "next/head";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
-import { useState, useEffect } from "react";
 import Logo from "@components/Logo";
 import Date from "@components/Date";
-import ImageUrlBuilder from "@sanity/image-url";
-import { useRouter } from "next/router";
+import { sanityClient } from "sanity";
+import router from "next/router";
+import Image from "@components/Image";
 
 export default function BlogPage({ posts }) {
-  // Inicio da função de Posts
-
-  const router = useRouter();
-  const [mappedPosts, setMappedPosts] = useState([]);
-
-  useEffect(() => {
-    if (posts && posts.length) {
-      const builder = ImageUrlBuilder({
-        projectId: "9xodeons",
-        dataset: "production",
-      });
-
-      setMappedPosts(
-        posts.map((p) => {
-          return {
-            ...p,
-            mainImage: builder.image(p.mainImage).width(500).height(250),
-          };
-        })
-      );
-    } else {
-      setMappedPosts([]);
-    }
-  }, [posts]);
-
-  const firstPost = mappedPosts.slice(0, 1);
-  const otherPost = mappedPosts.slice(1);
-  // Fim da função de Posts
+  const firstPost = posts.slice(0, 1);
+  const otherPost = posts.slice(1);
 
   return (
     <>
@@ -68,8 +42,8 @@ export default function BlogPage({ posts }) {
           {firstPost.length ? (
             firstPost.map((p, index) => (
               <div className="lg:flex lg:flex-row lg:flex-nowrap lg:justify-between">
-                <div className="lg:w-full lg:h-full">
-                  <img src={p.mainImage} className="w-full h-full" />
+                <div className="h-60 overflow-hidden">
+                <Image image={p.mainImage} />
                 </div>
                 <div className="mt-4 px-4 flex mx-auto space-x-4">
                   <div className="min-h-full w-2 bg-primary lg:hidden"></div>
@@ -101,13 +75,13 @@ export default function BlogPage({ posts }) {
           {otherPost.length ? (
             otherPost.map((p, index) => (
               <div className="flex flex-row space-x-4 mb-4 lg:flex-col lg:mr-4 lg:space-x-0 lg:w-72">
-                <div className="flex-none w-44 lg:w-full lg:mb-4">
-                <a
-                      onClick={() => router.push(`/post/${p.slug.current}`)}
-                      key={index}
-                      className="cursor-pointer"
-                    >
-                  <img src={p.mainImage} alt={p.title} />
+                <div className="flex-none w-44 lg:w-full lg:mb-4 lg:object-cover lg:h-40 lg:overflow-hidden">
+                  <a
+                    onClick={() => router.push(`/post/${p.slug.current}`)}
+                    key={index}
+                    className="cursor-pointer"
+                  >
+                    <Image image={p.mainImage} />
                   </a>
                 </div>
                 <div className="flex my-auto lg:flex-col lg:m-0">
@@ -144,13 +118,10 @@ export default function BlogPage({ posts }) {
 }
 
 export const getServerSideProps = async () => {
-  const query = encodeURIComponent(
-    '*[_type == "post"] | order(publishedAt desc)'
-  );
-  const url = `https://9xodeons.api.sanity.io/v1/data/query/production?query=${query}`;
-  const result = await fetch(url).then((res) => res.json());
+  const query = `*[_type == "post"] | order(publishedAt desc)`;
+  const posts = await sanityClient.fetch(query);
 
-  if (!result.result || !result.result.length) {
+  if (!posts.length) {
     return {
       props: {
         posts: [],
@@ -159,7 +130,7 @@ export const getServerSideProps = async () => {
   } else {
     return {
       props: {
-        posts: result.result,
+        posts,
       },
     };
   }

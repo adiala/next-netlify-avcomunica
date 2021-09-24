@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Logo from "@components/Logo2";
 import logo from "public/av.png";
 export default function Blog() {
   return (

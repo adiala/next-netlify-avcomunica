@@ -1,7 +1,7 @@
-import ImageUrlBuilder from "@sanity/image-url";
+import { sanityClient } from "sanity";
+import Image from "@components/Image";
 import PostBody from "../../components/post-body";
 import Logo from "@components/Logo2.js";
-import { useState, useEffect } from "react";
 import Footer from "@components/Footer";
 import Head from "next/head";
 import Date from "@components/Date";
@@ -19,22 +19,10 @@ import {
   FacebookIcon,
 } from "react-share";
 
-function Post({ title, author, body, image, date, excerpt, slug }) {
-
-  const imgStyle= {
+export const Post = ({ title, author, body, image, date, excerpt, slug }) => {
+  const imgStyle = {
     maxHeight: "600px",
-  }
-  
-  const [imageUrl, setImageUrl] = useState("");
-
-  useEffect(() => {
-    const imgBuilder = ImageUrlBuilder({
-      projectId: "9xodeons",
-      dataset: "production",
-    });
-
-    setImageUrl(imgBuilder.image(image));
-  }, [image]);
+  };
 
   return (
     <div>
@@ -56,10 +44,12 @@ function Post({ title, author, body, image, date, excerpt, slug }) {
       <div className="container mx-auto px-4 lg:px-0">
         <article>
           <div className="flex flex-col mt-4 lg:mt-0 lg:flex-row lg:items-center">
-            <div className="w-full max-h-full lg:py-24">
-              {imageUrl && (
-                <img className="object-cover object-center w-full" src={imageUrl} style={imgStyle}/>
-              )}
+            <div className="w-full max-h-full ">
+              <Image
+                image={image}
+                className="object-cover object-center w-full"
+                style={imgStyle}
+              />
             </div>
             <div className="flex flex-col lg:pl-24 lg:pr-5 flex-grow-0 lg:w-9/12 mt-4 lg:mb-0 mb-4">
               <h1 className="lg:text-5xl text-3xl font-roboto tracking-tight font-bold mb-4">
@@ -122,19 +112,12 @@ function Post({ title, author, body, image, date, excerpt, slug }) {
       />
     </div>
   );
-}
+};
 
 export const getServerSideProps = async (pageContext) => {
   const pageSlug = pageContext.query.slug;
 
-  if (!pageSlug) {
-    return {
-      notFound: true,
-    };
-  }
-
-  const query = encodeURIComponent(
-    `*[ _type == "post" && slug.current == "${pageSlug}" ] {
+  const query = `*[ _type == "post" && slug.current == $pageSlug][0] {
       body,
       'author': author->name,
       title,
@@ -142,16 +125,13 @@ export const getServerSideProps = async (pageContext) => {
       publishedAt,
       excerpt,
       'slug': slug.current,
+    }`;
 
-    }`
-  );
-  const url = `https://9xodeons.api.sanity.io/v1/data/query/production?query=${query}`;
-
-  const result = await fetch(url).then((res) => res.json());
-  const post = result.result[0];
+  const post = await sanityClient.fetch(query, { pageSlug });
 
   if (!post) {
     return {
+      props: null,
       notFound: true,
     };
   } else {
