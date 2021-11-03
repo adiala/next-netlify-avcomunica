@@ -7,7 +7,7 @@ const Application = ({ Component, pageProps }) => {
     <>
       <Script
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=XXXXXXXXXX`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-M44WTTJHVC`}
       />
       <Script strategy="lazyOnload">
         {`
