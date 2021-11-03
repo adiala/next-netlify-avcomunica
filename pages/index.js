@@ -15,7 +15,6 @@ import router from "next/router";
 import Image from "@components/Image";
 
 const Home = ({ posts }) => {
-  // console.log(posts)
 
   return (
     <>
