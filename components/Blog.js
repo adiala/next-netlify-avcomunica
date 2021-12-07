@@ -14,7 +14,6 @@ export default function Blog() {
           Os 2 lados da notícia
         </h2>
       </div>
-      <hr className="mb-6"/>
     </div>
   );
 }
