@@ -1,8 +1,8 @@
 export default function Hero() {
   return (
     <div className="mb-5">
-      <div className="h-1/2">
-        <video autoPlay loop muted className="object-cover object-center h-full w-full">
+      <div className="h-[40vh]">
+        <video autoPlay loop muted className="object-cover object-center h-full w-full aspect-video">
           <source src="netv.mp4" type="video/mp4" />
         </video>
       </div>

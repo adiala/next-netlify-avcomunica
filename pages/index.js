@@ -86,8 +86,9 @@ const Home = ({ posts }) => {
                     aria-label={p.title}
                     onClick={() => router.push(`/post/${p.slug.current}`)}
                     key={index}
+                    className="aspect-square"
                   >
-                    <Image image={p.mainImage} alt={p.title} />
+                    <Image image={p.mainImage} alt={p.title} className="aspect-square" />
                   </a>
                 </div>
                 <div className="p-5">

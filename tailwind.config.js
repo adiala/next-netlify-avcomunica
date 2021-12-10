@@ -1,12 +1,10 @@
 module.exports = {
-  // mode: 'jit',
-  purge: [
+  content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./public/**/*.html",
     "./src/**/*.{js,jsx,ts,tsx,vue}",
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       roboto: ['"Roboto"', "system-ui"],
@@ -42,11 +40,6 @@ module.exports = {
         primary: "#f66c13",
         secondary: "#9c2d05",
       },
-    },
-  },
-  variants: {
-    extend: {
-      margin: ["last"],
     },
   },
   plugins: [],

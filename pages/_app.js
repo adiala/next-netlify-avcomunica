@@ -1,4 +1,4 @@
-import "tailwindcss/tailwind.css";
+import "../styles/main.css";
 import "../styles/embla.css";
 import Script from "next/script";
 
