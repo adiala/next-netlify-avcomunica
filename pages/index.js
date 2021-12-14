@@ -11,11 +11,9 @@ import Footer from "@components/Footer";
 import Date from "@components/Date";
 import Link from "next/link";
 import { sanityClient } from "sanity";
-import router from "next/router";
 import Image from "@components/Image";
 
 const Home = ({ posts }) => {
-
   return (
     <>
       <Head>
@@ -79,45 +77,39 @@ const Home = ({ posts }) => {
         <Blog />
         <section className="mb-3 md:container md:mx-auto md:grid xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2">
           {posts.length ? (
-            posts.map((p, index) => (
-              <div className="flex flex-col relative border-2 mx-4 mb-3 transform transition-all hover:scale-105 cursor-pointer">
-                <div className="object-cover h-52 overflow-hidden">
-                  <a
-                    aria-label={p.title}
-                    onClick={() => router.push(`/post/${p.slug.current}`)}
-                    key={index}
-                    className="aspect-square"
-                  >
-                    <Image image={p.mainImage} alt={p.title} className="aspect-square" />
-                  </a>
-                </div>
-                <div className="p-5">
-                  <div className="flex relative">
-                    <div className="absolute w-2 p-0 m-0 bg-primary rounded-sm min-h-full"></div>
-                    <div className="ml-4">
-                      <h2 className="font-roboto text-lg tracking-tighter text-gray-900 font-bold uppercase leading-tight">
-                        <a
-                          onClick={() => router.push(`/post/${p.slug.current}`)}
-                          key={index}
-                          className="cursor-pointer"
-                        >
+            posts.map((p) => (
+              <Link
+                href={{
+                  pathname: "/post/[slug]",
+                  query: { slug: `${p.slug.current}` },
+                }}
+              >
+                <a className="flex flex-col relative border-2 mx-4 mb-3 transform transition-all hover:scale-105 cursor-pointer">
+                  <div className="object-cover h-52 overflow-hidden">
+                    <Image image={p.mainImage} alt={p.title} />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex relative">
+                      <div className="absolute w-2 p-0 m-0 bg-primary rounded-sm min-h-full"></div>
+                      <div className="ml-4">
+                        <h2 className="font-roboto text-lg tracking-tighter text-gray-900 font-bold uppercase leading-tight">
                           {p.title}
-                        </a>
-                      </h2>
+                        </h2>
+                      </div>
                     </div>
-                  </div>
 
-                  <div>
-                    <p className="mt-2 mb-2 tracking-tighter text-sm text-gray-700 font-roboto antialiased">
-                      Publicado em <Date dateString={p.publishedAt} />
+                    <div>
+                      <p className="mt-2 mb-2 tracking-tighter text-sm text-gray-700 font-roboto antialiased">
+                        Publicado em <Date dateString={p.publishedAt} />
+                      </p>
+                      <hr></hr>
+                    </div>
+                    <p className="mt-2 text-gray-800 tracking-tight text-md font-roboto antialiased">
+                      {p.excerpt}
                     </p>
-                    <hr></hr>
                   </div>
-                  <p className="mt-2 text-gray-800 tracking-tight text-md font-roboto antialiased">
-                    {p.excerpt}
-                  </p>
-                </div>
-              </div>
+                </a>
+              </Link>
             ))
           ) : (
             <>Sem posts no momento</>
@@ -125,9 +117,11 @@ const Home = ({ posts }) => {
         </section>
         <div className="flex justify-center mb-4 p-4 md:container mx-auto">
           <Link href="/blog">
-            <button className="bg-primary w-full lg:w-32 h-10 p-2 hover:bg-secondary transition-all text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
-              Leia Mais »
-            </button>
+            <a>
+              <button className="bg-primary w-full lg:w-32 h-10 p-2 hover:bg-secondary transition-all text-white text-center text-md tracking-tight font-rubik antialiased uppercase cursor-pointer">
+                Leia Mais »
+              </button>
+            </a>
           </Link>
         </div>
         <Services />

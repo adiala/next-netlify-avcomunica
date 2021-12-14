@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from "public/av.png";
+
 export default function Blog() {
   return (
     <div className="container mx-auto">

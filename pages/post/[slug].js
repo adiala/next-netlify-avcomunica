@@ -37,9 +37,9 @@ export const Post = ({ title, author, body, image, date, excerpt, slug }) => {
       </Head>
       <Navbar
         logo={<Logo />}
-        urlServicos="./#servicos"
-        urlClientes="./#clientes"
-        urlPerfil="./#perfil"
+        urlServicos=".././#servicos"
+        urlClientes=".././#clientes"
+        urlPerfil=".././#perfil"
       />
       <div className="container mx-auto px-4 lg:px-0">
         <article>
