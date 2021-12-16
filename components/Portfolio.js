@@ -79,9 +79,15 @@ export default function Profile() {
               corporativo e Bureau
             </h2>
             <div className="grid grid-cols-2 lg:grid-cols-2">
-              {corporativo.map((c) => (
+              {corporativo.map((c, index) => (
                 <div>
-                  <Image placeholder="blur" src={c} layout="responsive" />
+                  <Image
+                    key={index}
+                    placeholder="blur"
+                    src={c}
+                    layout="responsive"
+                    priority
+                  />
                 </div>
               ))}
             </div>
@@ -94,13 +100,14 @@ export default function Profile() {
               Clique para baixar os conteúdos
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
-              {conteudo.map((c) => (
+              {conteudo.map((c, index) => (
                 <div className="transform transition-all hover:scale-105 cursor-pointer">
-                  <a href={c.link} target="_blank">
+                  <a key={index} href={c.link} target="_blank">
                     <Image
                       placeholder="blur"
                       src={c.name}
                       layout="responsive"
+                      priority
                     />
                   </a>
                 </div>

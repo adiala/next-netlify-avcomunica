@@ -63,34 +63,25 @@ const EmblaCarousel = () => {
               <div className="embla__slide__inner">
                 <Image
                   src={media1}
-                  alt="Campanha Simone Tebet."
+                  alt="Campanha Simone Tebet"
                   placeholder="blur"
-                  
+                  priority
                 />
               </div>
             </div>
             <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
-                <Image
-                  src={media2}
-                  alt="PSDB Mulher"
-                />
+                <Image src={media2} alt="PSDB Mulher" priority />
               </div>
             </div>
             <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
-                <Image
-                  src={media3}
-                  alt="Campanha Geraldo Alckmin"
-                />
+                <Image src={media3} alt="Campanha Geraldo Alckmin" />
               </div>
             </div>
             <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
-                <Image
-                  src={media4}
-                  alt="Campanha Aécio Neves"
-                />
+                <Image src={media4} alt="Campanha Aécio Neves" />
               </div>
             </div>
           </div>

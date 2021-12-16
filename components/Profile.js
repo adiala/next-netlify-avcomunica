@@ -8,7 +8,12 @@ export default function Profile() {
       className="lg:flex lg:flex-row lg:container mx-auto lg:p-4 lg:space-x-8 lg:justify-between"
     >
       <div className="w-full lg:flex-auto">
-        <Image src={profilePic} alt="Foto da Adriana Vasconcelos" placeholder="blur"/>
+        <Image
+          src={profilePic}
+          alt="Foto da Adriana Vasconcelos"
+          placeholder="blur"
+          priority
+        />
       </div>
       <div className="w-full container mx-auto lg:flex-auto lg:my-auto p-4 lg:p-0">
         <div className="w-10 h-0.5 bg-primary mb-2"></div>
