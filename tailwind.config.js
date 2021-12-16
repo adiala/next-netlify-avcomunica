@@ -1,10 +1,5 @@
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./public/**/*.html",
-    "./src/**/*.{js,jsx,ts,tsx,vue}",
-  ],
+  content: ["./pages/**/*.js", "./components/**/*.js", "./data/*.js"],
   theme: {
     fontFamily: {
       roboto: ['"Roboto"', "system-ui"],
@@ -12,9 +7,6 @@ module.exports = {
       rubik: ['"Rubik"', "sans-serif"],
     },
     extend: {
-      backgroundImage: (theme) => ({
-        contact: "url('public/contact.jpg')",
-      }),
       keyframes: {
         "fade-in-down": {
           "0%": {

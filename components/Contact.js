@@ -89,7 +89,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="rounded bg-contact bg-cover"></div>
+        <div className="rounded bg-[url('public/contact.jpg')] bg-cover"></div>
       </section>
     </div>
   );
