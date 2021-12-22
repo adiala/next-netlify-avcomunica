@@ -7,7 +7,6 @@ import part04 from "../public/part-04.png";
 import part05 from "../public/part-05.png";
 import part06 from "../public/part-06.png";
 import part07 from "../public/part-07.png";
-import part08 from "../public/part-08.png";
 import corp01 from "../public/corp-01.png";
 import corp02 from "../public/corp-02.png";
 import corp03 from "../public/corp-03.png";
@@ -19,16 +18,7 @@ import cont04 from "../public/cont-04.png";
 import cont05 from "../public/cont-05.png";
 
 export default function Profile() {
-  const partidos = [
-    part01,
-    part02,
-    part03,
-    part04,
-    part05,
-    part06,
-    part07,
-    part08,
-  ];
+  const partidos = [part01, part02, part03, part04, part05, part06, part07];
   const corporativo = [corp01, corp02, corp03, corp04];
   const conteudo = [
     { name: cont01, link: "/cartilha-programatica.pdf" },

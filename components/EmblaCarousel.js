@@ -6,6 +6,7 @@ import media1 from "../public/politica-01.png";
 import media2 from "../public/politica-02.png";
 import media3 from "../public/politica-03.png";
 import media4 from "../public/politica-04.jpg";
+import media5 from "../public/politica-05.png";
 
 const AUTOPLAY_INTERVAL = 4000;
 
@@ -82,6 +83,11 @@ const EmblaCarousel = () => {
             <div className="embla__slide pr-2">
               <div className="embla__slide__inner">
                 <Image src={media4} alt="Campanha Aécio Neves" />
+              </div>
+            </div>
+            <div className="embla__slide pr-2">
+              <div className="embla__slide__inner">
+                <Image src={media5} alt="Prévias PSDB" />
               </div>
             </div>
           </div>
