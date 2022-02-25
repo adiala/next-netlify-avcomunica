@@ -1,28 +1,31 @@
 .markdown {
-    @apply font-roboto text-lg leading-relaxed;
-  }
+  @apply font-roboto text-lg leading-relaxed;
+}
 
-  .markdown::first-letter {
-    float: left;
-    font-size: 58px;
-    color: #f66c13;
-    font-weight: bold;
-    margin:0 6px 0 0;
-    line-height: 1;
-  }
-  
-  .markdown p,
-  .markdown ul,
-  .markdown ol,
-  .markdown blockquote {
-    @apply my-6;
-  }
-  
-  .markdown h2 {
-    @apply text-3xl mt-12 mb-4 leading-snug;
-  }
-  
-  .markdown h3 {
-    @apply text-2xl mt-8 mb-4 leading-snug;
+.markdown::first-letter {
+  float: left;
+  font-size: 58px;
+  color: #f66c13;
+  font-weight: bold;
+  margin: 0 6px 0 0;
+  line-height: 1;
+}
 
-  }
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  @apply my-6;
+}
+
+.markdown h2 {
+  @apply text-3xl mt-12 mb-4 leading-snug;
+}
+
+.markdown h3 {
+  @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown iframe {
+  @apply w-full aspect-auto;
+}
